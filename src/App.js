@@ -10,7 +10,7 @@ import Pokemon from "./pages/Pokemon";
 import Pokedex from "./pages/Pokedex";
 import AddPokemon from "./pages/AddPokemon";
 import DeletePokemon from "./components/DeletePokemon";
-
+import Navbar from "./pages/Navbar";
 //App.js
 function App(props){
   return <Router>
@@ -32,5 +32,6 @@ function App(props){
         </Route>
       </Switch>
   </Router>
+ 
 }
 export default App;
