@@ -1,8 +1,10 @@
 import Pokedexlist from "../components/Pokedexlist";
-import Pokedex from "./pages/pokedex.css"
+import './dex.css'
+
 function Pokedex(props){
-    return <div><Pokedexlist/>
-     
+    return <div className="header">
+            < Pokedexlist/>
     </div>;    
+    className="body"
 }
 export default Pokedex;
