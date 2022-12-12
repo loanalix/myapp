@@ -6,7 +6,7 @@ import { getAll } from "../api/Pokemon";
 
 function Pokemonlist(props){
   const [ pokemons, setPokemons ] = useState([]);
-  const [ ff, setff ] = useState([]);
+  
 
 //va s'executer seulement au lancement du composant (dep: [])
 useEffect(() => {
@@ -16,7 +16,7 @@ useEffect(() => {
   pokemonsFetched
     .then(result => setPokemons(result))
     .catch(error=>console.error("Erreur avec notre API :",error.message));
-},[ff,setff]);
+},[]);
 return <div className="pokemon-list">
     <div class="flex">
       {
@@ -24,7 +24,7 @@ return <div className="pokemon-list">
           return <div key={key} className="bloc-pokemon">
             <img className="avatar" src={pokemon.img} />
             <h2>{pokemon.name}</h2>
-            <button onClick={()=>{addToPokedex(pokemon); setff(ff+1)}
+            <button onClick={()=>addToPokedex(pokemon)
             }>Capturer !</button>
           </div>
         })

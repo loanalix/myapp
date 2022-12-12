@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useForm} from "react-hook-form";
 function AddPokemon() {
     const { register, handleSubmit } = useForm();
-    const [ ff, setff ] = useState(0);
+    const [ ff, setff ] = useState([]);
     
     const onSubmit = async (data) => {
     console.log(data);
@@ -16,8 +16,10 @@ function AddPokemon() {
                 body: JSON.stringify(data)
     
             }
+            
         )
         const result = await response.json()
+        
         return result
     
     
@@ -26,8 +28,8 @@ function AddPokemon() {
     //On peut transformer les données en JSON pour les envoyer dans notre appel
     //JSON.stringify(data);
   }
-   
-  return (
+  
+    return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("name")} placeholder="name"/>
       <select {...register("Types", { required: true })}>
@@ -75,7 +77,7 @@ function AddPokemon() {
       </select>
       <button type="submit"onClick={()=>{
                 
-                setff(ff+1)
+                
             }} >Valider</button>
     </form>
   );

@@ -3,7 +3,7 @@ import { getAll } from "../api/Pokedexx";
 
 function Pokedexlist(props){
     const [ pokemons, setPokemons ] = useState([]);
-    const [ ff, setff ] = useState([0]);
+    
     
   
   //va s'executer seulement au lancement du composant (dep: [])
@@ -13,7 +13,7 @@ function Pokedexlist(props){
     pokemonsFetched
       .then(result => setPokemons(result))
       .catch(error=>console.error("Erreur avec notre API :",error.message));
-  },[ff,setff]);
+  },[]);
   return <div className="pokemon-list">
       <div class="flex">
         {
