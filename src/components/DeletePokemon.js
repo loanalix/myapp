@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { addToPokedex } from "../api/Pokedexx";
 import { getAll } from "../api/Pokemon";
+import { Delete } from "../api/Pokemon";
 
 
 
-function Pokemonlist(props){
+function DeletePokemon(props){
   const [ pokemons, setPokemons ] = useState([]);
-  const [ ff, setff ] = useState([]);
+  const [ ff, setff ] = useState(0);
 
 //va s'executer seulement au lancement du composant (dep: [])
 useEffect(() => {
@@ -24,8 +24,10 @@ return <div className="pokemon-list">
           return <div key={key} className="bloc-pokemon">
             <img className="avatar" src={pokemon.img} />
             <h2>{pokemon.name}</h2>
-            <button onClick={()=>{addToPokedex(pokemon); setff(ff+1)}
-            }>Capturer !</button>
+            <button onClick={()=>{
+                Delete(pokemon);
+                setff(ff+1)
+            }}>Supprimer !</button>
           </div>
         })
       }
@@ -33,9 +35,4 @@ return <div className="pokemon-list">
 </div>;
 
 }
-export default Pokemonlist;
-
-
-
-
-
+export default DeletePokemon;
