@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { addToPokedex } from "../api/Pokedexx";
 import { getAll } from "../api/pokemon";
-
+import logo from "../image/logo.png";
 
 
 function Pokemonlist(props){
@@ -18,7 +18,7 @@ useEffect(() => {
     .catch(error=>console.error("Erreur avec notre API :",error.message));
 },[]);
 return <div className="pokemon-list">
-    <div> <img src="{'../image/logo.png'} "alt="image"/> ; 
+    <div> <img src={logo.png} alt="image"/> ; 
     </div>
     <div class="flex">
       {
