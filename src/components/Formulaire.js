@@ -25,6 +25,7 @@ useEffect(() => {
         <Form.Control  {...register("_id")} type="hidden"  defaultValue={props.Pokemon._id}/>     
         <Form.Control  {...register("name")} defaultValue={props.Pokemon.name}/>
         
+        
       
       <Button type="submit">Modifier</Button>
 
