@@ -26,3 +26,18 @@ export const Delete = async (data) => {
     const pokemons = await response.json()
     return pokemons
 }
+
+export const Update = async (data) => {
+    const response = await fetch(
+        'http://localhost:4444/pokemon/update/list', {
+            method: 'POST', 
+            headers: {
+                'Accept': 'application/json', 
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+    )
+    const pokemons = await response.json()
+    return pokemons
+}

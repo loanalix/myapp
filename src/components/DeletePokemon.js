@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { getAll } from "../api/Pokemon";
-import { Delete } from "../api/Pokemon";
+import { getAll } from "../api/pokemon";
+import { Delete } from "../api/pokemon";
+import Navi from "../pages/Navbar";
 
 
 
@@ -24,6 +25,7 @@ function DeletePokemon(props){
     
     return <div className="pokemon-list">
         <div class="flex">
+            <Navi/>
         {
             pokemons.map((pokemon,key) =>{
             return <div key={key} className="bloc-pokemon">

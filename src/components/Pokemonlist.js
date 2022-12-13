@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { addToPokedex } from "../api/Pokedexx";
-import { getAll } from "../api/Pokemon";
+import { getAll } from "../api/pokemon";
 
 
 
@@ -18,12 +18,15 @@ useEffect(() => {
     .catch(error=>console.error("Erreur avec notre API :",error.message));
 },[]);
 return <div className="pokemon-list">
+    <div> <img src="{'../image/logo.png'} "alt="image"/> ; 
+    </div>
     <div class="flex">
       {
         pokemons.map((pokemon,key) =>{
           return <div key={key} className="bloc-pokemon">
             <img className="avatar" src={pokemon.img} />
             <h2>{pokemon.name}</h2>
+            <h3>{pokemon.Types}</h3>
             <button onClick={()=>addToPokedex(pokemon)
             }>Capturer !</button>
           </div>

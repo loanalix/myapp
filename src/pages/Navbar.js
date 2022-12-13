@@ -1,41 +1,24 @@
-import React, {useState,useEffect} from 'react'
-import './dex.css'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-export default function Navbar(){
-
-    const [toggleMenu, settoggleMenu]=useState(false);
-
-    const toggleNavSmallScreen = () => {
-        settoggleMenu(!toggleMenu); 
-    }
-
-    useEffect(() => {
-
-        const changeWidht = () => {
-            setLargeur(window.innerWidth);
-
-            if (window.innerWidth > 500){
-                settoggleMenu(false);
-            }
-        }
-        
-        window.addEventListener('resize',changeWidht);
-        
-        return () => {
-            window.removeEventListener('resize',changeWidht);
-        }
-        
-    },[])
-
-    return(
-        <nav>
-            {toggleMenu &&(<ul classeName="liste">
-                <li classeName="item">PokeListe</li>
-                <li classeName="item">PokeDex</li>
-                <li classeName="item">PokeAdd</li>
-                <li classeName="item">PokeDel</li>
-            </ul>)}
-            <button onClick={toggleNavSmallScreen} classeName="BTN">BTN</button>
-        </nav>
-    )
+function Navi() {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/Pokedex">Pokedex</Nav.Link>
+            <Nav.Link href="/Pokemon">PokeListe</Nav.Link>
+            <Nav.Link href="/AddPokemon">Addpoke</Nav.Link>
+            <Nav.Link href="/DeletePokemon">delpoke</Nav.Link>
+            <Nav.Link href="/UpdatePokemon">Uppoke</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
+
+export default Navi;

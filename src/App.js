@@ -10,7 +10,9 @@ import Pokemon from "./pages/Pokemon";
 import Pokedex from "./pages/Pokedex";
 import AddPokemon from "./pages/AddPokemon";
 import DeletePokemon from "./components/DeletePokemon";
-import Navbar from "./pages/Navbar";
+import UpdatePokemon from "./components/UpdatePokemon";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Formular from "./components/Formulaire";
 //App.js
 function App(props){
   return <Router>
@@ -30,6 +32,14 @@ function App(props){
         <Route exact path="/deletepokemon"> 
           < DeletePokemon/> 
         </Route>
+        <Route exact path="/updatepokemon"> 
+          < UpdatePokemon/> 
+        </Route>
+        <Route exact path="/formulaire"> 
+          < Formular/> 
+        </Route>
+        
+
       </Switch>
   </Router>
  

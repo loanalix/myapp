@@ -1,8 +1,3 @@
-.header{
-background-color: white;
-text-align: center;
-
-}
 
 .body{
 background-color: blue    
@@ -10,12 +5,12 @@ background-color: blue
 
 nav{
     height: 50px;
-    background: linear-gradient(45deg, rgb(156,14,156),midnigthblue);
+    background: linear-gradient(45deg, rgb(156,14,156),blue);
 }
 
 .liste{
     list-style: none;
-    background: linear-gradient(45deg, rgb(156,14,156),midnigthblue);
+    background: linear-gradient(45deg, rgb(156,14,156),blue);
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,7 +21,7 @@ nav{
 }
 .items{
     height: 10px;
-    color: #f1f1f1;
+    color: #da1212;
     cursor: pointer;
 }
 
