@@ -1,4 +1,3 @@
-import { Carousel } from "bootstrap";
 import Pokedexlist from "../components/Pokedexlist"; 
 import './dex.css'
 import Navi from "./Navbar";
