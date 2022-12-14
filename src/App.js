@@ -1,4 +1,3 @@
-import Home from "./pages/Home";
 import Add from "./pages/AddPokemon";
 
 import {
@@ -17,9 +16,6 @@ import Formular from "./components/Formulaire";
 function App(props){
   return <Router>
       <Switch>
-        <Route exact path="/home"> 
-          < Home/> 
-        </Route>
         <Route exact path="/pokemon"> 
           < Pokemon/> 
         </Route>

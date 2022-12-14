@@ -1,11 +1,15 @@
 
-.body{
-background-color: blue    
+body{
+    background-repeat:no-repeat ;
+    background-size: contain;
+    background-color:  rgb(221, 202, 243) !important ;
 }
 
 nav{
     height: 50px;
     background: linear-gradient(45deg, rgb(156,14,156),blue);
+    position: sticky;
+    top: 0;
 }
 
 .liste{
@@ -60,3 +64,8 @@ nav{
     }
     
 }
+
+ .img{
+    width:100%;
+
+ }

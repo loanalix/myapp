@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {useForm} from "react-hook-form";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
+import { getAll, Update } from "../api/pokemon";
+import Button from 'react-bootstrap/Button';
 function AddPokemon() {
     const { register, handleSubmit } = useForm();
     const [ ff, setff ] = useState([]);
@@ -30,15 +37,19 @@ function AddPokemon() {
   }
   
     return (
+      <div>
+        <h1> Ajouter un Pokemon</h1>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("name")} placeholder="name"/>
-      <select {...register("Types", { required: true })}>
+       <Container>
+      <Row>
+        <Col xs={12}  md={3} lg={2}> <Form.Control {...register("name")} placeholder="name"/></Col>
+        <Col xs={12}  md={3} lg={2}><Form.Select {...register("Types", { required: true })}>
         <option value="">Type</option>
         <option value="Feu">Feu</option>
         <option value="Glace">Glace</option>
         <option value="Eau">Eau</option>
         <option value="Plante">Plante</option>
-        <option value="Electrique">Electrique</option>
+        <option value="Electrik">Electrik</option>
         <option value="Acier">Acier</option>
         <option value="Dragon">Dragon</option>
         <option value="Insecte">Insecte</option>
@@ -52,8 +63,8 @@ function AddPokemon() {
         <option value="Normal">Normal</option>
         <option value="Poison">Poison</option>
         <option value="Psy">Psy</option>
-      </select>
-      <select {...register("Types2", { required: true })}>
+        </Form.Select></Col>
+      <Col xs={12}  md={3} lg={2}> <Form.Select {...register("Types2", { required: true })}>
         <option value="">Type2</option>
         <option value="Feu">Feu</option>
         <option value="Glace">Glace</option>
@@ -74,12 +85,26 @@ function AddPokemon() {
         <option value="Poison">Poison</option>
         <option value="Psy">Psy</option>
         <option value="pure">pure</option>
-      </select>
-      <button type="submit"onClick={()=>{
+        </Form.Select></Col>
+      <Col xs={12}  md={3} lg={2}> <Form.Control {...register("img")} placeholder="img"/></Col>
+      <Col xs={12}  md={3} lg={2}><button type="submit"onClick={()=>{
                 
                 
-            }} >Valider</button>
+              }} >Valider</button></Col>
+      
+
+      </Row>
+      
+    </Container>
+      
+      
+      
+     
+
+
+    
     </form>
+    </div>
   );
 }
   

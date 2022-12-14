@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAll } from "../api/Pokedexx";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Pokedexlist(props){
     const [ pokemons, setPokemons ] = useState([]);
@@ -19,8 +22,19 @@ function Pokedexlist(props){
         {
           pokemons.map((pokemon,key) =>{
             return <div key={key} className="bloc-pokemon">
-              <img className="avatar" src={pokemon.img} />
-              <h2>{pokemon.name}</h2>
+              <Container>
+             
+             
+             <Row>
+             <Col s={12} md={4} lg={2}><img className="avatar" src={pokemon.img} /></Col>
+             <Col s={12} md={4} lg={2}><h2>{pokemon.name}</h2></Col>
+             <Col s={12} md={4} lg={2}> <h3>{pokemon.Types}</h3></Col>
+             
+             <Col s={12} md={4} lg={2}><h3>{pokemon.Types2}</h3></Col>
+              </Row>
+            
+           
+          </Container>
             </div>
           })
         }

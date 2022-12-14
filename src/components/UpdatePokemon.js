@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {useForm} from "react-hook-form";
 import { getAll } from "../api/pokemon";
 import Navi from '../pages/Navbar';
-import {UpdateForm} from './formUpdate';
 import Formular from "./Formulaire";
 function UpdatePokemon() {
    

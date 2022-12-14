@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { getAll } from "../api/pokemon";
 import { Delete } from "../api/pokemon";
 import Navi from "../pages/Navbar";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -29,8 +32,12 @@ function DeletePokemon(props){
         {
             pokemons.map((pokemon,key) =>{
             return <div key={key} className="bloc-pokemon">
-                <img className="avatar" src={pokemon.img} />
-                <h2>{pokemon.name}</h2>
+                <Container>
+                    <Row>
+                    <Col s={12} md={4} lg={2}><img className="avatar" src={pokemon.img} /></Col>
+                    <Col s={12} md={4} lg={2}><h2>{pokemon.name}</h2></Col>
+                    </Row>
+                </Container>
                 <button onClick={()=>handleDelete(pokemon)}>Supprimer !</button>
             </div>
             })
